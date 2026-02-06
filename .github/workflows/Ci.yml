@@ -28,6 +28,27 @@ jobs:
       - name: Build
         run: ./mvnw clean compile
 
+      - name: Test
+        run: ./mvnw test
+
+      - name: Run checkstyle
+        run: ./mvnw verify
+
+      - name: Cache Maven dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key:  maven-${{ runner.os }}-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            maven-${{ runner.os }}-
+
+
+
+
+
+
+
+
 
 
 
