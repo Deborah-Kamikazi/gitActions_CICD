@@ -13,4 +13,23 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v4
 
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+            distribution: 'temurin'
+            java-version: 21
+
+      - name: print java version
+        run: java -version
+
+      - name: make mvnw executable
+        run: chmod +x mvnw
+
+      - name: Build
+        run: ./mvnw clean compile
+
+
+
+
+
 
