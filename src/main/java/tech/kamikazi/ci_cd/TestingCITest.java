@@ -9,7 +9,7 @@ public class TestingCITest {
     @Test
     public void failingTest() {
         // This test is deliberately failing
-        assertEquals(1, 2, "This test should fail");
+        assertEquals(1, 2);
     }
 
     @Test
