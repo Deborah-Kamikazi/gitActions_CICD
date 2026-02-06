@@ -31,6 +31,14 @@ jobs:
       - name: Test
         run: ./mvnw test
 
+      - name: plugin
+        run: pom.xml
+
+      - name: Run checkstyle
+        run: ./mvnw verify
+
+
+
 
 
 
