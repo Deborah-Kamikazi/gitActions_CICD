@@ -3,6 +3,8 @@ name: Java CI with maven
 on:
   push:
     branches: [main]
+    tags:
+      - 'v*'
   pull_request:
 
 jobs:
@@ -47,6 +49,9 @@ jobs:
         with:
           name: application-jar
           path: target/*.jar
+
+      - name: Run tests (with Testcontainers)
+        run: mvn clean test
 
 
 
